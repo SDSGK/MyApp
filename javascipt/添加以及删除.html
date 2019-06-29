@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			window.onload = function(){
+				var li = document.createElement('li')
+				console.log(li)
+				var text = document.createTextNode('这是添加的li');
+				console.log(text)
+				console.log(li.appendChild(text))
+				li.appendChild(text)
+				var ul = document.querySelectorAll('.ul_1')[0]
+				var btn = document.querySelectorAll('button')[0]
+				btn.onclick=function(){
+					var li = document.createElement('li')
+					console.log(li)
+					var text = document.createTextNode('这是添加的li');
+					//text.inneHTML('123')
+					console.log(text)
+					console.log(li.appendChild(text))
+					var li2=document.querySelectorAll('li')[1]
+					li.appendChild(text)
+					// ul.appendChild(li)
+					// ul.insertBefore(li,li2)
+					ul.replaceChild(li,li2)
+				}
+				var lis = document.querySelectorAll('li')
+				for(var i=0; i<lis.length;i++){
+					lis[i].onclick= function(){
+						console.log(this)
+						this.remove(lis[i])
+					}
+				}
+				
+			}
+		</script>
+		<style>
+			*{
+				padding: 0;margin: 0;
+			}
+			.ul_1{
+				margin: 10px 10px;
+			}
+			.ul_1>li{
+				border: 1px solid;
+				width: 60px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="ul_1">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<button>点击添加li</button>
+	</body>
+</html>

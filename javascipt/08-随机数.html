@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.yzm{
+				display: flex;
+				width: 150px;;
+			}
+			.yzm>p{
+				border: 1px solid;
+				background-color: rgba(0,0,0,0.3);
+			}
+		</style>
+	</head>
+	<body>
+		<input id="ipt"/><div class="yzm">验证码：<p onclick="sjs()"></p></div>
+		<button>验证</button>
+		
+		<script>
+			
+			
+			function sjs(){
+				var ss=[]
+				for(var i =0;i<16;i++){
+					ss[i]=(Math.round(Math.random()*8)+1);//生成1-9随机数
+				}
+				console.log("生成16个随机数:"+ss)
+				for(var q =0; q<ss.length;q++){
+					console.log("便利:"+ss[q])
+					for( var j = q+1; j<ss.length;j++){
+						if( ss[q] == ss[j]){
+							ss.splice(j,1)
+							j--
+						}
+						
+					}
+				}	
+				var ssqc = ss.slice(0,4);
+				console.log("去重得到并截取前面四位得到："+ssqc)
+				var p = document.getElementsByTagName('p')[0]
+				p.innerHTML = ssqc
+				var aa = '';
+				for (var t = 0; t < 4; t++) {
+					aa += ssqc[t]
+				}
+				console.log(aa)
+				
+				var btn = document.getElementsByTagName("button")[0]
+				var ipt = document.getElementsByTagName("input")[0]
+				btn.onclick = function(){
+					console.log(ipt.value)
+					 if(ipt.value != aa){
+					 	alert("验证码错误");
+					 }
+				}
+			}
+		sjs();
+		</script>
+	</body>
+</html>

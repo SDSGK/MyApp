@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// console.log(222)
+			function Person(name,age){
+				this.name = name;
+				this.age = age;
+				
+			}
+			Person.prototype.toString = function(){
+				return "Person[name="+this.name+"age="+this.age+"]"
+			}
+			/*
+			[
+				{
+					name:"zhangsan"
+				},
+				{
+					name:"lisi"
+				}
+			]
+			*/	
+			var pp1 = new Person("swk",18)
+			var pp2 = new Person("zbj",28)
+			var pp3 = new Person("hhe",8)
+			var pp4 = new Person("zzj",16)
+			var pp5 = new Person("els",38)
+			var ppArr = [pp1,pp2,pp3,pp4,pp5]
+			// console.log(ppArr)
+			function chuli(arr){
+				var newarr =[];
+				for(var i = 0; i<arr.length;i++){
+					if(arr[i].age >=18){
+						// console.log(arr[i]);
+						newarr.push(arr[i])
+					}
+				}
+				return newarr;
+			}
+			//chuli(ppArr)
+			console.log(chuli(ppArr)[0].age)
+		</script>
+	</body>
+</html>

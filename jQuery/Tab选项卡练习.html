@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<title>html_muban</title>
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+
+<script>
+    $(function(){
+        
+		var lis = $('.ul_1>li').mouseenter(function(){
+			$(this).addClass('huanse')
+			$(this).siblings().removeClass('huanse')
+			var index = $(this).index()
+			// console.log(index)
+			var ul2lis = $('.ul_2>li').eq(index);
+			
+			ul2lis.addClass('show')
+			ul2lis.siblings().removeClass('show')
+		})
+		// console.log(lis)
+	
+    })
+
+    
+    
+</script>
+<style>
+    *{
+        margin:0;
+        padding:0;
+
+    }
+	.div_1{
+			width: 400px;
+			height: 400px;
+			border: 1px solid;
+			margin: 10px auto;
+		}
+	.ul_1{
+		list-style: none;
+	}
+	.ul_1>li{
+		height: 50px;
+		width: 25%;
+		float: left;
+		background-color: burlywood;
+		line-height: 50px;
+		font-size: 13px;
+	}
+	.ul_2{
+		list-style: none;
+	}
+	.ul_2>li{
+		height: 400px;
+		background-color: skyblue;
+		display: none;
+	}
+	.ul_2 .show{
+		display: block;
+	}
+	.ul_1 .huanse{
+		background-color: salmon;
+	}
+    
+</style>
+</head>
+<body>
+		<div class="div_1">
+			<ul class="ul_1">
+				<li class="huanse">这里是选项卡1</li>
+				<li>这里是选项卡2</li>
+				<li>这里是选项卡3</li>
+				<li>这里是选项卡4</li>
+			</ul>
+			<ul class="ul_2">
+				<li class="show">111111</li>
+				<li>222222</li>
+				<li>333333</li>
+				<li>444444</li>
+			</ul>
+		</div>
+</body>
+</html>

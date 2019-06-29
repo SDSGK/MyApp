@@ -1,0 +1,139 @@
+/* pages/onclick/onclick.wxss */
+.swiper_view_imgs{
+  width: 25%;
+  border: 0px solid;
+}
+.swiper_find_view_1{
+  display: flex;
+  margin-top: 40px;
+}
+.swiper_find_names{
+  text-overflow:ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.swiper_find_gameName{
+  width: 45%;
+  font-size: 16px;
+  line-height: 30px;
+  padding-top: 10px;
+  padding-left: 15px;
+}
+.swiper_find_button{
+  width: 30%;
+  padding-top: 20px;
+  border: 0px solid;
+}
+.swiper_find_button_1{
+  border: 1px solid greenyellow;
+  width: 90px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 10px;
+}
+.hr_1{
+  margin-top: 2px;
+  margin-bottom: 4px;
+  height: 2px;
+  background-color: rgba(201, 201, 201, 0.808);
+}
+.swiper_find_left_img{
+  height: 70px;
+  width: 80px;
+  margin-left: 10px;
+}
+.onclick_db_daohanglan{
+  bottom: 0;
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  background-color: #dfe6e9;
+  display: flex;
+}
+.onclick_input_pl{
+  border: 1px solid;
+  border-radius: 10px;
+  font-size: 12px;
+  background: #fff;
+  padding-left:10px;
+  width: 100%;
+}
+.onclick_db_view_input{
+  width: 65%;
+  margin-top: 12px;
+  margin-left:5px;
+  display:flex;
+}/* 
+.onclick_db_fabiao{
+  font-size: 14px;
+  width:65px;
+  height:35px;
+  text-align: center;
+  line-height: 35px;
+  margin-top: -2px;
+} */
+.onclick_db_imgs{
+  width:35px;
+  height:35px;
+  margin:0px 10px 0 15px;
+}
+.onclick_db_view{
+  margin-top:5px;
+}
+.onclick_view_pinglun{
+  border-top: 1px solid #dfe6e9;
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+.onclick_db_dixian{
+  height: 90px;
+  text-align: center;
+  position: relative;
+}
+
+.onclick_db_dixian::after{
+  content: '';
+  height: 1px ;
+  position: absolute;
+  width: 100%;
+  background-color: #dfe6e9;
+  left: 0;
+  margin-top: 22px;
+}
+.onclick_db_chakangengduo{
+  text-align: center;
+  color: skyblue;
+  margin: 5px 0;
+}
+.onclick_db_pinglun{
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin-left:10px;
+}
+.onclick_db_name{
+  margin: 8px 0 0 10px;
+  font-size: 14px;
+}
+.onclick_zhongjian_jianjie{
+  margin: 0 10px;
+  line-height: 1.5;
+  font-size: 16px;
+}
+.onclick_data_time{
+  text-align: right;
+  font-size: 14px;
+  border: 0px solid;
+  margin: 10px 10px 10px 0;
+  color: #dfe6e9;
+}
+.onclick_zhongjian_biaoti{
+font-size: 20px;
+text-align: center;
+margin: 0 10px;
+}
+.noclick_db_wanjiapinglun{
+  margin:2px 0 2px 70px;
+  font-size: 14px;
+}

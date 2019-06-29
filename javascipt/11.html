@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script>
+			window.onload = function(){
+				// var ipts = document.getElementsByTagName('input');
+				// console.log(ipts[0]);
+				var ipts = document.querySelectorAll('input');
+				var btns = document.getElementsByTagName('button');
+				console.log(btns[0])
+				
+				btns[0].onclick = function(){
+					
+					// console.log(ipts[2])
+					for(var i =0; i<ipts.length-1;i++){
+						// console.log(ipts[i])
+						ipts[i].checked = true
+					}
+					return false;
+				},
+				btns[1].onclick = function(){
+					// console.log(ipts[2])
+					for(var i =0; i<ipts.length-1;i++){
+						// console.log(ipts[i])
+						ipts[i].checked = false
+					}
+					return false;
+				},
+				btns[2].onclick = function(){
+					// console.log(ipts[2])
+					for(var i =0; i<ipts.length-1;i++){
+							 ipts[i].checked = !ipts[i].checked
+							// ipts[i].checked = ss
+						}
+					
+					return false;
+				}
+				btns[3].onclick = function(){
+					// console.log(ipts[2])
+					for(var i =0; i<ipts.length;i++){
+							 // ipts[i].checked = !ipts[i].checked
+							 if(ipts[i].checked == true)
+							console.log(ipts[i].value)
+						}
+					
+					return false;
+				}
+				
+				var qx = document.getElementsByTagName('input')[5];
+				qx.onclick = function(){
+					
+					for(var i =0; i<ipts.length-1;i++){
+						if(ipts[i].checked == false){
+						ipts[i].checked = true
+						qx.checked = true
+						// qx.innerHTML = '全选'
+						console.log(qx.nextSibling)
+						qx.nextSibling.removeChild()
+						}else
+						if(ipts[i].checked == true){
+						ipts[i].checked = false
+						qx.checked = false
+						// qx.innerHTML = '全不选'
+						console.log(qx.nextSibling)
+						qx.nextSibling.innerHTML = '全不选'
+						}
+						
+					}
+				}
+				
+			}
+		</script>
+		<title></title>
+	</head>
+	<body>
+		<form>
+			<input type="checkbox" name="items" value="唱" />唱
+			<input type="checkbox" name="items" value="跳" />跳
+			<input type="checkbox" name="items" value="rap" />rap
+			<input type="checkbox" name="items" value="篮球" />篮球
+			<input type="checkbox" name="items" value="music" />music
+			<br/>
+			<button>全选</button>
+			<button>全不选</button>
+			<button>反选</button>
+			<button>提交</button>
+			<br/>
+			<input type="checkbox" name="items" value="全选" />Wdnmd
+		</form>
+	</body>
+</html>

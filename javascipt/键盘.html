@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script type="text/javascript">
+		window.onload = function(){
+			var div1 = document.querySelectorAll('.div_1')[0]
+			document.onkeydown = function(e){
+				e = e || window.e
+				console.log(e.keyCode)
+				var speed = 10;
+			
+					switch (e.keyCode){
+						case 65:
+						div1.style.transform +=  "translateX("+-speed+"px)"
+						break;
+						case  83:
+						div1.style.transform +=  "translateY("+speed+"px)"
+						break;
+						case 87:
+						div1.style.transform +=  "translateY("+-speed+"px)"
+						break;
+						case 68:
+						div1.style.transform +=  "translateX("+speed+"px)"
+						break;
+					}
+				// 
+				// if(e.keyCode == 65){
+				// 	div1.style.transform +=  "translateX(-10px)"
+				// }else if(e.keyCode == 83){
+				// 	div1.style.transform +=  "translateY(10px)"
+				// }else if(e.keyCode == 87){
+				// 	div1.style.transform +=  "translateY(-10px)"
+				// }else if(e.keyCode == 68){
+				// 	div1.style.transform +=  "translateX(10px)"
+				// }
+				
+			}
+		}
+	</script>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.div_1{
+			width: 200px;
+			height: 200px;
+			background-color: #87CEEB;
+			position: absolute;
+			transition: all 0.1s;
+		}
+	</style>
+	<body>
+		<div class="div_1"></div>
+	</body>
+</html>

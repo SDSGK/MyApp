@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background-color: skyblue;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var div1 = document.querySelectorAll('div')[0]
+				div1.onmousewheel = function(e){
+					// console.log(e.deltaY)
+					if(e.deltaY >0){
+						div1.style.height = div1.clientHeight -10 + "px"
+					}else{
+						div1.style.height = div1.clientHeight + 10 + "px"
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

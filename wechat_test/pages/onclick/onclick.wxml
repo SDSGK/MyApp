@@ -1,0 +1,52 @@
+<!--pages/onclick/onclick.wxml-->
+<block wx:for="{{game}}">
+        <view class='swiper_find_view_1'>
+          <view class='swiper_view_imgs'>
+            <image src='{{item.image}}' class='swiper_find_left_img'></image>
+          </view>
+          <view class='swiper_find_gameName'>
+            <view class='swiper_find_names'>{{item.name}}</view>
+            <view>{{item.jiage}}MB</view>
+          </view>
+          <view class='swiper_find_button'>
+            <button class='swiper_find_button_1' data-val="{{item}}" bindtap='onclick_tjgwc'>添加到购物车</button>
+          </view>
+        </view>
+        <view class='hr_1'></view>
+</block>
+<!--中间简介-->
+<view class='onclick_zhongjian_biaoti'>这可是一款高大上的游戏哦</view>
+<view class='onclick_data_time'>2019/6/1</view>
+<view class='onclick_zhongjian_jianjie' 
+bindtouchstart='sme'
+bindtouchmove='sme'
+bindtouchend='sme'>总之呢，这款游戏是真的好玩，我也不知都为什么会这么说，可能为为了凑字数来证明我的这个地方是说明的地方，一定要说的高大上让人听着就会相信的那种，反正就是这样的，凑字数显得我这个页面很高大上，输入内容越多就会变得很长很长，添加内容添加内容添加内容添加内容添加内容添加内容添加内容添加内容添加内容添加内容添加内容添加内容添加内容添加内容添加内容添加内容添加内容添加内容添加内容添加内容添加内容添加内容添加内容添加内容</view>
+
+<!--评论区-->
+<view style='height:50px;'></view>
+<block wx:for='{{pinglun}}'>
+<view class='onclick_view_pinglun'>
+<image src='{{item.img}}' class='onclick_db_pinglun'></image>
+<view class='onclick_db_name'>
+{{item.name}}
+<view>{{item.time}}</view>
+</view>
+</view> 
+<view class='noclick_db_wanjiapinglun'>{{item.text}}</view>
+<view class='hr_1'></view>
+</block>
+
+<view class='onclick_db_chakangengduo'>查看更多评论</view>
+<view class='onclick_db_dixian'>这里是底线</view>
+<!--底部导航栏-->
+<view class='onclick_db_daohanglan'>
+<view class='onclick_db_view_input'>
+  <input placeholder='你说的才是头条...' class='onclick_input_pl' bindconfirm='onclick_shuru' adjust-position value='{{valueshuru}}' confirm-type='send'> </input>
+  </view>
+  <view class='onclick_db_view' >
+  <image src='http://a4.qpic.cn/psb?/V11GboKj1UDEcv/Ady.HEzs4Avwt6AwxgYpE1pCCp8JyutgOoktAZcOrEg!/m/dFMBAAAAAAAAnull&bo=yADIAAAAAAADByI!&rf=photolist&t=5' class='onclick_db_imgs'></image>
+  </view>
+  <view class='onclick_db_view' bindtap='back'>
+  <image src='http://a1.qpic.cn/psb?/V10SnofO3KHn7k/w24KDV9Fbrz3VhSnXw5f09b1WyQneQcqUD.9T6B.sAk!/c/dFQBAAAAAAAA&ek=1&kp=1&pt=0&bo=yADIAAAAAAADFzI!&tl=1&vuin=2308458810&tm=1561507200&sce=60-2-2&rf=0-0' class='onclick_db_imgs'></image>
+  </view>
+</view>

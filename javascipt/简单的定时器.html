@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+		</style>
+		
+		<script type="text/javascript">
+			window.onload= function(){
+				var h1 = document.querySelectorAll('h1')[0]
+				// console.log(h1)
+				var num = 1;
+				var biaoshi = setInterval(function(){
+					h1.innerHTML = num++;
+					
+					if(num == 10){
+						clearInterval(biaoshi);
+					}
+				},1000)
+			}
+		</script>
+	</head>
+	<body>
+		<h1 class="h_1">1</h1>
+	</body>
+</html>

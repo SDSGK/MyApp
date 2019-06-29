@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<title>html_muban</title>
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+
+<script>
+    $(function(){
+        $("a").eq(0).click(function(event){
+            // alert("qqqq");
+            // event.preventDefault
+            event.preventDefault();//阻止默认行为
+        })
+        $("button").eq(0).click(function(event){
+            // alert('qq');
+            event.preventDefault();
+        })
+        $("div").eq(0).click(function(){
+            alert('faaa')
+        })
+        $("div").eq(1).click(function(event){
+            alert("aaaa")
+            event.stopPropagation();//解决父级响应子级的问题
+        })
+
+    })
+
+    
+    
+</script>
+<style>
+    *{
+        margin:0;
+        padding:0;
+
+    }
+    .faaa{
+        width: 200px;
+        height: 200px;
+        background:red;
+    }
+    .aaa{
+        width: 100px;
+        height: 100px;
+        background: blue;
+    }
+</style>
+</head>
+<body>
+    <a href="http://www.baidu.com">注册</a>
+    <form action="http://www.baidu.com">
+<button>提交</button>
+
+<div class="faaa">
+    <div class="aaa"></div>
+</div>
+</form>
+</body>
+</html>

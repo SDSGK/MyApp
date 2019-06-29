@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+				
+			}
+			table{
+				border: 0px solid;
+				width: 500px;
+				height: 300px;
+				text-align:center;
+				margin-left: 20px;
+			}
+			ul{
+				margin-left: 20px;
+				list-style: none;
+				margin-top: 10px;
+			}
+			ul>button{
+				width: 205px;
+				margin-top: 10px;;
+			}
+			ul>li{
+				margin-top: 10px;
+			}
+		</style>
+		<script type="text/javascript">
+				
+			function ccc(){
+				
+			}
+			window.onload = function(){
+				var p = document.querySelectorAll('p')
+				for( var i =0; i<p.length;i++){
+					p[i].onclick = function(){
+						var tr = this.parentNode.parentNode
+						console.log(tr)
+						// p[i].remove(this)
+						var br = confirm('确认删除“'+tr.children[0].innerText+'”吗?')
+						if(br){
+							tr.parentNode.removeChild(tr)
+						}
+					}
+				}
+				var btn= document.querySelectorAll('button')[0]
+				btn.onclick= function(){
+					var inputs = document.querySelectorAll('input')
+					for(var i=0;i<inputs.length;i++){
+						// console.log(inputs[i].value)
+						// console.log(this)
+						var tr = document.createElement('tr')
+						tr.innerHTML = "<td>"+inputs[0].value+"</td>"+
+										"<td>"+inputs[0].value+"</td>"+
+										"<td>"+inputs[0].value+"</td>"+
+										"<td><p>删除</p></td>";
+						var tbody = document.querySelectorAll('tbody')[0]
+						tbody.appendChild(tr)
+						return 
+					}
+						
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<table cellpadding="0" cellspacing="0" border="1">
+		<tr>
+			<td>白给少年</td>
+			<td>19</td>
+			<td>xxxxxxxx@xx.xxx</td>
+			<td><p>删除</p></td>
+		</tr>
+		<tr>
+			<td>芦苇</td>
+			<td>20</td>
+			<td>xxxxxxxx@xx.xxx</td>
+			<td><p>删除</p></td>
+		</tr>
+		<tr>
+			<td>Wdnmd</td>
+			<td>99</td>
+			<td>xxxxxxxx@xx.xxx</td>
+			<td><p>删除</p></td>
+		</tr>
+		</table>
+		<ul>
+			<li>
+				<div>名字<input type="text"></div>
+			</li>
+			<li>
+				<div>年龄<input type="text"></div>
+			</li>
+			<li>
+				<div>邮箱<input type="text"></div>
+			</li>
+			<button>提交</button>
+		</ul>
+	</body>
+</html>

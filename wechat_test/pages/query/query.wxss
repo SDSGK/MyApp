@@ -1,0 +1,100 @@
+/* pages/query/query.wxss */
+.query_input_1{
+  margin-left: 10px;
+  width: 90%;
+  font-size: 14px;
+  height: 30px;
+  border: 1px solid skyblue;
+  border-radius: 20px;
+  padding-left: 10px;
+  margin-top: 20px;
+}
+.query_jqrm_text{
+  font-size: 12px;
+  color: rgba(161, 159, 159, 0.774);
+}
+.query_text_center{
+  text-align: center;
+}
+.query_remen{
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 0px solid;
+  text-align: center;
+  margin: 10px  0px  ;
+}
+.dnmd{
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 12px;
+  opacity: 0.6;
+  border: 1px solid;
+  border-radius: 15px;
+  line-height: 30px;
+  width: 20%;
+  margin-top: 5px;
+  background-color: #c9c7c7b7;
+  color: #000
+}
+
+.swiper_view_imgs{
+  width: 25%;
+  border: 0px solid;
+}
+.swiper_find_view_1{
+  display: flex;
+}
+.swiper_find_names{
+  text-overflow:ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 15px;
+}
+.swiper_find_gameName{
+  width: 45%;
+  font-size: 16px;
+  line-height: 30px;
+  padding-left: 15px;
+}
+.swiper_find_button{
+  width: 25%;
+  padding-top: 20px;
+  border: 0px solid;
+  margin-right: 20px;
+}
+.swiper_find_button_1{
+  border: 1px solid greenyellow;
+  width: 90px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 10px;
+}
+.hr_2{
+  margin-top: 20px;
+  margin-bottom: 4px;
+  height: 2px;
+  background-color: rgba(201, 201, 201, 0.808);
+}
+.hr_1{
+  margin-top: 5px;
+  margin-bottom: 4px;
+  height: 2px;
+  background-color: rgba(201, 201, 201, 0.808);
+}
+.swiper_find_left_img{
+  height: 70px;
+  width: 80px;
+  margin-left: 10px;
+}
+.swiper_gwc_gwckong{
+  text-align: center;
+  font-size: 14px;
+}
+.query_back{
+  margin-left: 15px;
+  font-size: 16px;
+  color: #b8b8b8;
+
+}

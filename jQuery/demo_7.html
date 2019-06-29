@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<title>html_muban</title>
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+
+<script>
+    $(function(){
+        // $("ul>li").click(function(){
+        //     console.log($(this).html());
+            
+        // })
+
+        $("button").click(function(){
+            $("ul").append('<li>这是一个新添加的li</li>')
+        })
+        $("ul").delegate("li","click",function(){
+            console.log($(this).html());
+        })
+    })
+
+    
+    
+</script>
+<style>
+    *{
+        margin:0;
+        padding:0;
+
+    }
+    
+</style>
+</head>
+<body>
+<!--ul.ul_1>li{这是第$个li}*8--!>
+<ul>
+    <li>我是地1个li</li>
+    <li>我是地2个li</li>
+    <li>我是地3个li</li>
+    <li>我是地4个li</li>
+    <li>我是地5个li</li>
+    <li>我是地6个li</li>
+    <li>我是地7个li</li>
+    <li>我是地8个li</li>
+    <li>我是地9个li</li>
+</ul>
+<button>添加一个li</button>
+</body>
+</html>

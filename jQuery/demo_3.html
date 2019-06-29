@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<title>html_muban</title>
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+
+<script>
+    $(function(){
+        var btns = document.getElementsByTagName("button");
+        btns[0].onclick= function(){
+            $("div").eq(0).html('<p>添加标签</p>')
+        }
+        btns[1].onclick= function(){
+            console.log($("div").eq(0).html());
+            
+        }
+        btns[2].onclick= function(){
+            $("div").eq(0).text('<p>添加标签</p>')
+        }
+        btns[3].onclick= function(){
+            console.log($("div").eq(0).text());
+            
+        }
+        btns[4].onclick= function(){
+            $("input").eq(0).val('添加标签')
+        }
+        btns[5].onclick= function(){
+            console.log($("input").eq(0).val());
+            
+        }
+        btns[6].onclick= function(){
+            $("div").eq(0).css({
+                width:'200px',
+                backgroundColor:'red',
+                height:'300px'
+            })
+        }
+
+    })
+
+    
+    
+</script>
+<style>
+    *{
+        margin:0;
+        padding:0;
+
+    }
+    .div_1{
+        width: 100px;
+        height: 100px;
+        border: 1px solid;
+    }
+</style>
+</head>
+<body>
+    <button>设置html</button>
+    <button>获取html</button>
+    <button>设置text</button>
+    <button>获取text</button>
+    <button>设置value</button>
+    <button>获取value</button>
+    <button>设置css</button>
+    <div class="div_1"></div>
+    <input></input>
+</body>
+</html>

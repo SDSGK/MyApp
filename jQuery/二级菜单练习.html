@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<title>html_muban</title>
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+
+<script>
+    $(function(){
+        var index = 0;
+		for(let i =0 ; i<$('.div1').length;i++){
+			
+			// console.log($('div1'))
+			$('.div1').eq(i).on('click',function(){
+				// console.log(this)
+				
+				index = $(this).index()
+				// console.log(index)
+				$('.huakuai').eq(index).slideToggle(500)
+				
+			})
+		}
+		
+		// console.log()
+	
+    })
+
+    
+    
+</script>
+<style>
+    *{
+        margin:0;
+        padding:0;
+
+    }
+    .div1{
+		width: 400px;
+		background-color: lightskyblue;
+		border: 1px solid;
+		font-size: 20px;
+		text-align: center;
+	}
+	.div1_div{
+		width: 400px;
+		height: 57px;
+		border: 1px solid;
+		background-color: palevioletred;
+		
+	}
+	.huakuai{
+		display: none;
+	}
+</style>
+</head>
+<body>
+	<div class="div1">
+		一级菜单
+		<div class="huakuai">
+		<div class="div1_div"></div>
+		<div class="div1_div"></div>
+		<div class="div1_div"></div>
+		</div>
+	</div>
+	<div class="div1">
+		一级菜单
+		<div class="huakuai">
+		<div class="div1_div"></div>
+		<div class="div1_div"></div>
+		<div class="div1_div"></div>
+		</div>
+	</div>
+	<div class="div1">
+		一级菜单
+		<div class="huakuai">
+		<div class="div1_div"></div>
+		<div class="div1_div"></div>
+		<div class="div1_div"></div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<title>jQuery_dome_1</title>
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+
+<script>
+    $(function(){
+        /*
+        //alert('q');
+        $div = $("div:contains('我是div')")
+        console.log($div);
+        
+        $div = $('div:parent')
+        console.log($div)
+        $div = $("div:has('span')")
+        console.log($div)
+
+
+        var span = document.getElementsByTagName('span')[1];
+        span.setAttribute('class','diyige')
+        console.log(span.getAttribute("name"))
+
+        $span1 = $(".dierge");
+        console.log($span1);
+        $cc = $span1.removeAttr("name class")
+        console.log($cc)
+
+        $qq = $("span").eq(0).prop('name','diyigespan')
+        $WW = $("span").eq(0).prop('name')
+         
+        $qq = $("span").eq(0).attr('name','diyigespan')
+        console.log($qq)
+        console.log($WW)
+        */
+        
+            // var btn = $(".btn").eq(0)
+            // var btn = $('.btn').eq(0)
+            // var ipt = $("input").eq(0)
+            // var img = $("img").eq(1)
+            // var bl
+            // console.log(btn)
+            // btn.onclick = function(){
+            //     alert('1')
+            //     bl = ipt.attr("value")
+                
+            //     img.attr("src",bl)
+            // }
+            var btn = document.getElementsByTagName('button')[0];
+            
+            btn.onclick = function(){
+                var ipt = document.getElementsByTagName('input')[0]
+                
+                var ww = ipt.value
+                console.log(ipt)
+                console.log(ww)
+                $img = $("img").eq(1).attr('src', ww)
+                
+            }
+            
+            
+            var btn = document.getElementsByTagName("button");
+            // var div11= document.getElementsByTagName("div")[4];$("div")
+            var div11 = $("div").eq(4);
+            
+            btn[1].onclick = function(){
+                div11.addClass("class1 class2");
+                console.log(div11)
+            }
+            btn[2].onclick = function(){
+                div11.removeClass("class1 class2");
+                console.log(div11)
+            }
+            btn[3].onclick = function(){
+                div11.toggleClass("class1 class2");
+                console.log(div11)
+            }
+
+           
+
+            // $ipt.attr("value")
+            // console.log($ipt)
+
+    })
+
+    
+    
+</script>
+<style>
+    *{
+        margin:0;
+        padding:0;
+
+    }
+    .diyige{
+        border: 1px solid;
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+        display: block;
+    }
+    .dierge{
+        border: 1px solid;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+    .class1{
+        border: 1px solid;
+        width: 100px;
+    }
+    .class2{
+        height: 100px;
+        background-color: red;
+    }
+</style>
+</head>
+<body>
+<img src="https://i2.hdslb.com/bfs/face/b9eba4944ec9c2d2f7d60f38f90b4487136832ff.png@168w_168h.webp">
+<div class="div_1">我是div</div>
+<div class="div_2">哈哈我是div</div>
+<div class="div_3"><span>里面包裹着span</span></div>
+<div class="div_4">qqqqq</div>
+<span name="span1" class=" dierge">qq</span>
+
+<br/>
+<input></input>
+<button  class="btn">切换图片</button><br/>
+<img src="https://i2.hdslb.com/bfs/face/b9eba4944ec9c2d2f7d60f38f90b4487136832ff.png@168w_168h.webp">
+
+<br/>
+<button>点我添加类</button>
+<button>点我删除类</button>
+<button>点我切换类</button>
+<div class="class1">111</div>
+</body>
+</html>

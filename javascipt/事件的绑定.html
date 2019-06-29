@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				
+				var btn = document.querySelectorAll('button')[0]
+				// btn.onclick = function(){
+				// 	console.log(this)
+				// }
+				// btn.addEventListener("click", function(){
+				// 	console.log(this)
+				// })
+				Bangding(btn,"click",function(){
+						console.log(this)
+				})
+				
+				function Bangding(obj,e,callback){
+					if(obj.addEventListener){
+						obj.addEventListener(e,callback)
+					}else{
+						obj.attachEvent("on"+e,function(){
+							callback.call(obj)
+						})
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button>111</button>
+	</body>
+</html>

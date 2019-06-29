@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				// console.log(navigator.userAgent)
+				
+				var liulanqi = navigator.userAgent;
+				console.log(liulanqi)
+				if(/firefox/i.test(liulanqi)){
+					console.log("firefox")
+				}else if(/Chrome/i.test(liulanqi)){
+					console.log("Chrome")
+				}else if(/msie/i.test(liulanqi)){
+					console.log("IE")
+				}else if("ActiveXObject" in window){
+					console.log("IE")
+				}
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<title>html_muban</title>
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script> -->
+<script src="js/jquery-1.12.4.js"></script>
+
+<script>
+    $(function(){
+        // console.log(111)
+		var yidong = 0;
+		var  time ;
+			
+			function aotuplay(){
+				timer = setInterval(function(){
+					yidong += -10;
+					if(yidong <= -1800){
+						yidong = 0
+					}
+					$('.ul1').eq(0).css('marginLeft',yidong);
+				},25);
+			}
+			aotuplay()
+			
+			$('.ul1>li').hover(function(){
+				clearInterval(timer)
+				$(this).siblings().fadeTo(100,0.5)
+				$(this).fadeTo(100,1)
+			} , function(){
+				aotuplay()
+				$('li').fadeTo(100,1)
+			})
+
+
+
+    });
+
+    
+    
+</script>
+<style>
+    *{
+        margin:0;
+        padding:0;
+
+    }
+    .div1{
+		width: 600px;
+		height: 160px;
+		border: 1px solid #ADD8E6;
+		overflow: hidden;
+	}
+	.ul1{
+		width: 2400px;
+		height: 160px;
+		border: 1px solid;
+	}
+	.ul1>li{
+		float: left;
+	}
+</style>
+</head>
+<body>
+	<div class="div1">
+		<ul class="ul1">
+			<li><img src='https://img.3dmgame.com/uploads/images/thumbkwdfirst/20180824/1535097086_262447.jpg'/></li>
+			<li><img src='https://img.3dmgame.com/uploads/images/thumbkwdfirst/20190531/1559265530_323837.jpg'/></li>
+			<li><img src='https://img.3dmgame.com/uploads/images/thumbkwdfirst/20190513/1557714825_245472.jpg'/></li>
+			<li><img src='https://img.3dmgame.com/uploads/images/thumbkwdfirst/20180711/1531296880_417675.png'/></li>
+			<li><img src='https://img.3dmgame.com/uploads/images/thumbkwdfirst/20190613/1560394640_497950.jpg'/></li>
+			<li><img src='https://img.3dmgame.com/uploads/images/thumbkwdfirst/20180707/1530955686_690386.jpg'/></li>
+			<li><img src='https://img.3dmgame.com/uploads/images/thumbkwdfirst/20180824/1535097086_262447.jpg'/></li>
+			<li><img src='https://img.3dmgame.com/uploads/images/thumbkwdfirst/20190531/1559265530_323837.jpg'/></li>
+		</ul>
+	</div>
+</body>
+</html>

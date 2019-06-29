@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<title>html_muban</title>
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+
+<script>
+    $(function(){
+        
+		$('button').eq(0).on('click',function(){
+			// console.log(111)
+			$('.div1').animate({
+				// transform:'translateX(50px)'
+				marginLeft:200,
+				// width:100
+			},1000).animate({
+				marginTop:200
+			},1000).animate({
+				marginLeft:0
+			},1000).animate({
+				marginTop:0
+			},1000)
+		})
+		$('button').eq(1).on('click',function(){
+			
+			// $('.div1').stop(true,true)//当前动画立即执行完毕,跳过后面动画
+			// $('.div1').stop(false)//停止当前动画,执行后续动画
+			// $('.div1').stop(true)//暂停所有动画
+			$('.div1').stop(false,true)//跳过当前动画,执行后续的动画
+			})
+
+    })
+
+    
+    
+</script>
+<style>
+    *{
+        margin:0;
+        padding:0;
+
+    }
+	.div1{
+		width: 150px;
+		height: 150px;
+		background-color: lightblue;
+	}
+    
+</style>
+</head>
+<body>
+	<button>开始动画</button>
+	<button>暂停动画</button>
+	<div class="div1"></div>
+	
+
+</body>
+</html>

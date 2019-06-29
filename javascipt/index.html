@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>qqq</title>
+		<script type="text/javascript">
+			function pp(name,age,sex){
+				this.name=name
+				this.age=age
+				this.sex=sex
+			}
+			
+			pp.prototype.sayname = function (){
+				alert("大家好我是："+this.name)
+			}
+			p1 = new pp("张三",10,"男");
+			p2 = new pp("lis",16,"nan");
+			console.log(p1 instanceof pp)
+			p2.sayname();
+			
+		</script>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.ul_1{
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="ul_1">
+			<li>这是第1个li</li>
+			<li>这是第2个li</li>
+			<li>这是第3个li</li>
+			<li>这是第4个li</li>
+			<li>这是第5个li</li>
+			<li>这是第6个li</li>
+			<li>这是第7个li</li>
+			<li>这是第8个li</li>
+		</ul>
+	</body>
+</html>

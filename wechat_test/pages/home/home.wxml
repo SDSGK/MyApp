@@ -1,0 +1,229 @@
+<!--pages/home/home.wxml-->
+<view style='display:{{dds}}'>
+  <view class='db_quanxuan_1'>
+    <checkbox-group bindchange="checkAll">
+      <checkbox name="all" checked='{{checked}}'></checkbox>
+    </checkbox-group>
+    <view>全选</view>
+    <view class='db_zgdx'>总共大小:{{sumsize}}</view>
+    <button class='db_btn'>提交</button>
+    <button class='db_btn'>删除</button>
+  </view>
+</view>
+<swiper class='swiper_home' bindchange="change" current='{{curretPage}}' skip-hidden-item-layout="true" style='height:{{viewH}};background:{{backgroundColor}}; color:{{color}};'>
+  <swiper-item>
+    <!-- <view style='height:500px' class='scrollview'> -->
+    <!-- <scroll-view scroll-y='true'> -->
+    <swiper class='swiper_lunbo' indicator-dots='true' indicator-active-color='red' indicator-color='skyblue' autoplay='true' interval='2000' duration="1000">
+      <swiper-item>
+        <image class="swiper_img" src="https://img.3dmgame.com/uploads/images/news/20190611/1560254228_936571.jpg"></image>
+      </swiper-item>
+      <swiper-item>
+        <image class="swiper_img" src="https://img.3dmgame.com/uploads/images/news/20190611/1560254228_936571.jpg"></image>
+      </swiper-item>
+      <swiper-item>
+        <image class="swiper_img" src="https://img.3dmgame.com/uploads/images/news/20190611/1560254228_936571.jpg"></image>
+      </swiper-item>
+    </swiper>
+    <view>
+      <!--这里是首页内容-->
+      <block wx:for="{{arr}}" wx:key="*this">
+        <view>
+          <view class='hr'></view>
+          <view>
+            <view class='swiper_view_flex'>
+              <view class='swiper_home_swiper_text'>
+                <view class='swiper_view_text_1'>{{item.diyitiao}}</view>
+                <view class='swiper_view_text_2'>{{item.diertiao}}</view>
+              </view>
+              <view class='swiper_home_swiper_img'>
+                <image class="home_img" src="{{item.image}}"></image>
+              </view>
+            </view>
+          </view>
+          <view class='swiper_view_db'>
+            <view style='margin-left:8px'>{{item.fbzz}}</view>
+            <view class='swiper_view_db right_0'>
+              <view style='margin-right:10px'>{{item.gk}}观看</view>
+              <view>{{item.pl}}评论</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </swiper-item>
+
+
+  <swiper-item>
+    <!--这里是搜索栏板块-->
+    <view>
+      <view class='swiper_1_input_1'>
+        <input placeholder="点击此处可以搜索您想要的应用" bindtap='onclick_shuru'></input>
+      </view>
+      <!--这里是四个导航栏板块-->
+      <view class='swiper_1_view'>
+        <view class='swiper_1_view_text_1' data-index="0" bindtap='game_onclick'>游戏</view>
+        <view class='swiper_1_view_text_1 text_2' data-index="1" bindtap='game_onclick'>资源</view>
+        <view class='swiper_1_view_text_1 text_3' data-index="2" bindtap='game_onclick'>精品</view>
+        <view class='swiper_1_view_text_1 text_4' data-index="3" bindtap='game_onclick'>影视</view>
+      </view>
+      <view class='hr'></view>
+    </view>
+    <view wx:for="{{gamelist}}" wx:key="*this">
+      {{item.name}}
+    </view>
+    <!--这里是游戏板块-->
+    <view class='swiper_game {{serachGameC==0?"active":""}}'>
+      <block wx:for="{{game}}" wx:key="*this">
+        <view class='swiper_find_view_1'>
+          <view class='swiper_view_imgs' bindtap='to' data-val="{{item}}">
+            <image src='{{item.image}}' class='swiper_find_left_img'></image>
+          </view>
+          <view class='swiper_find_gameName' bindtap='to' data-val="{{item}}">
+            <view class='swiper_find_names'>{{item.name}}</view>
+            <view>软件大小:{{item.jiage}}MB</view>
+          </view>
+          <view class='swiper_find_button'>
+            <button class='swiper_find_button_1' data-val="{{item}}" bindtap='onclick_tjgwc'>{{tjgwc}}</button>
+          </view>
+        </view>
+        <view class='hr_1'></view>
+      </block>
+    </view>
+
+    <!--这里是资源板块-->
+    <view class='swiper_game2 {{serachGameC==1?"active":""}}'>
+      <block wx:for="{{zhiyuan}}" wx:key="*this">
+        <view class='swiper_find_view_1'>
+          <view class='swiper_view_imgs' bindtap='to' data-val="{{item}}">
+            <image src='{{item.image}}' class='swiper_find_left_img'></image>
+          </view>
+          <view class='swiper_find_gameName' bindtap='to' data-val="{{item}}">
+            <view class='swiper_find_names'>{{item.name}}</view>
+            <view>软件大小:{{item.jiage}}MB</view>
+          </view>
+          <view class='swiper_find_button'>
+            <button class='swiper_find_button_1' data-val="{{item}}" bindtap='onclick_tjgwc'>{{tjgwc}}</button>
+          </view>
+        </view>
+        <view class='hr_1'></view>
+      </block>
+    </view>
+
+    <!--这里是精品板块-->
+    <view class='swiper_game3 {{serachGameC==2?"active":""}}'>
+      <block wx:for="{{jingping}}" wx:key="*this">
+        <view class='swiper_game_jingping_view'>
+          <view class='swiper_game_jingping_img'>
+            <image class='swiper__game_jingping_imgs' src='{{item.image}}'></image>
+          </view>
+          <view style='text-align:center'>{{item.name}}</view>
+          <view class='swiper_game_jingping_flex'>
+            <view class='swiper_game_jingping_data-time'>{{item.dataTime}}</view>
+            <view class='swiper_game_jingping_right0'>观看数 {{item.jiage}}</view>
+          </view>
+        </view>
+        <view class='hr_1'></view>
+      </block>
+    </view>
+
+    <!--这里是影视板块-->
+    <view class='swiper_game4 {{serachGameC==3?"active":""}}'>
+      <!-- <view class='swiper_SVIP9'>右上角位置</view> -->
+      <block>
+       <view class='swiper_game4_flex'>
+         <!--   <view class='swiper_yingshi_diyige'>
+            <view class='swiper_yingshi_biaoti'>假装是个标题</view>
+            <view style='position:relative'>
+              <video class='swiper_yingshi_image' src='{{item.ship}}' direction='90' object-fit='cover' data-index="{{index}}" controls bindtap='video_stat2'></video>
+              <!-- <image src='{{item.image}}' class="photo {{xianshi2 == index ? 'yincang':''}}"></image> 
+            </view>
+          </view>-->
+
+        <view class='swiper_yingshi_dierge' wx:for="{{yingshi}}">
+            <view class='swiper_yingshi_biaoti'>第二个板块</view>
+              <video class='swiper_yingshi_image' id='v{{index}}' src='{{item.ship}}' direction='90' object-fit='cover' bindtap='video_stat' data-index="{{index}}"></video>
+              <!-- <image src='{{item.image}}' class="photo {{xianshi == index ? 'yincang':''}}"></image> -->
+          </view>
+       </view>
+      </block>
+
+
+
+    </view>
+  </swiper-item>
+
+  <swiper-item classs="swiper_gwc_dingwei">
+
+    <!--这里是购物车界面-->
+
+    <view class='swiper_gwc_home'>
+      <text class='swiper_gwc_bj' bindtap='onclick_bianji'>编辑</text>购物车</view>
+    <!--判断购物车数组的长度是否为0如果是零就代表数组为空-->
+    <block wx:if='{{gwc.length == 0}}'>
+      <view class='swiper_gwc_gwckong'>购物车还是空的
+        <button class='swiper_gwc_button' bindtap='onclick_swiper2'>去逛逛</button>
+      </view>
+    </block>
+
+    <!--这里是购物车板块-->
+    <block wx:for="{{gwc}}" wx:key="*this">
+      <view class='swiper_find_view_1'>
+        <view class='swiper_view_imgs' bindtap='to' data-val="{{item}}">
+          <image src='{{item.image}}' class='swiper_find_left_img'></image>
+        </view>
+        <view class='swiper_find_gameName' bindtap='to' data-val="{{item}}">
+          <view class='swiper_find_names'>{{item.name}}</view>
+          <view>软件大小:{{item.jiage}}MB</view>
+        </view>
+        <view class='swiper_find_button'>
+          <view class='swiper_find_button_2' data-val="{{item}}" data-index='{{index}}' bindtap='onclick_scgwc' style='display:{{ddsplay1}}'>删除</view>
+          <checkbox class='swiper_find_button_2' data-val="{{item}}" data-index='{{index}}' bindtap='onclick_check' style='display:{{ddsplay2}}' checked="{{chekcList[index]}}"></checkbox>
+        </view>
+      </view>
+      <view class='hr_1'></view>
+    </block>
+
+
+  </swiper-item>
+
+
+  <swiper-item>
+    <!--这里是个人中心-->
+    <view class='swiper_me_view_1'>
+      <view class='swiper_me_border_radius'>
+        <image src='https://i2.hdslb.com/bfs/face/3fef70d70810d07047749d04fe26cac9a038a83a.jpg@72w_72h.webp' class='swiper_me_image'></image>
+      </view>
+      <view>
+        <view class='swiper_me_name'>白给少年</view>
+        <view class='swiper_me_lv'>
+          <view>lv.10</view>
+          <view style='margin-left:5px;'>勋章1个</view>
+        </view>
+      </view>
+    </view>
+    <view>
+    </view>
+    <block wx:for="{{wode}}" wx:key="*this">
+      <view class='swiper_me_view_2'>
+        <view class='swiper_me_wdtz'>
+          <image src="{{item.img}}" class='swiper_me_images'></image>
+          {{item.text}}</view>
+        <view class='swiper_me_right0'>></view>
+      </view>
+    </block>
+    <view class='swiper_me_view_2'>
+      <view class='swiper_me_wdtz'>
+        <image src="http://a3.qpic.cn/psb?/V11GboKj1UDEcv/3UFLBT4fg.y9NqAozEPswpEVac8Ge6t..cQVtvQ6jg0!/m/dLYAAAAAAAAAnull&bo=yADIAMgAyAADCSw!&rf=photolist&t=5" class='swiper_me_images'></image>
+        夜间模式</view>
+      <switch bindchange="onclick_Nightmode" class='swiper__me_nigthmod'></switch>
+    </view>
+  </swiper-item>
+
+
+</swiper>
+
+<!--这里是底部导航栏-->
+<view class='swiper_dibu_daohanglan'>
+  <view wx:key="*this" wx:for="{{menu}}" class='{{index==curretPage?"swiper_dibu_daohanglan_neirong_2":"swiper_dibu_daohanglan_neirong_1"}}' bindtap='setCurrent' data-index="{{index}}">{{item}}</view>
+</view>

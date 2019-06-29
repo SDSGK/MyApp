@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			var ii = [7,11,2,3,4,1,4,1,5,7,1,5,1,2,3,5,1,6,1,3,5,1,1,1,1,1,"a",5,"g","w","r"]
+			for(var i =0;i<ii.length;i++){//便利
+				// console.log(ii[i])
+				for(var j = i+1 ; j<ii.length;j++){
+					// console.log(">>>>>>>>>>>>>>>"+ii[j])
+					if(ii[i] == ii[j]){
+						console.log(ii.splice(j,1))
+						j--
+					}
+				}
+			}
+			console.log(ii.sort(function(a, b){return a - b}))//打印并排序
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

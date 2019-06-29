@@ -1,0 +1,36 @@
+<!--pages/query/query.wxml-->
+<view>
+<view style='margin-top:30px;'>
+  <view class='query_back' bindtap='back'>返回</view>
+  <view><input placeholder="搜索您想要的资源" class='query_input_1' bindinput='sousuo' auto-focus value='{{iptVal}}'></input></view>
+  <view class='query_text_center'><text class='query_jqrm_text'>近期热门</text></view>
+</view>
+
+<view class='query_remen' >
+<view wx:for="{{dnmd}}" class='dnmd' bindtap='dianjishijian' data-index='{{index}}' data-item='{{item}}'>{{item.text}}</view>
+</view>
+</view>
+<view class='hr_2'></view>
+<!-- 
+<import src="../../tmp/tmp.wxml"/>
+<template is="msgItem" data="{{dnmd}}"/> -->
+<block wx:if='{{gamelist.length == 0}}'>
+      <view class='swiper_gwc_gwckong'>{{shuruneirong}}
+      </view>
+    </block>
+
+<block wx:for="{{gamelist}}"  wx:key="*this" >
+        <view class='swiper_find_view_1'>
+          <view class='swiper_view_imgs'  bindtap='to' data-val="{{item}}">
+            <image src='{{item.image}}' class='swiper_find_left_img'></image>
+          </view>
+          <view class='swiper_find_gameName'  bindtap='to' data-val="{{item}}">
+            <view class='swiper_find_names'>{{item.name}}</view>
+            <view>软件大小:{{item.jiage}}MB</view>
+          </view>
+          <view class='swiper_find_button'>
+            <button class='swiper_find_button_1' data-val="{{item}}" bindtap='onclick_tjgwc'>添加购物车</button>
+          </view>
+        </view>
+        <view class='hr_1'></view>
+      </block>

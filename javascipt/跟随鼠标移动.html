@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+				
+			window.onload = function(){
+				var body = document.querySelectorAll('body')[0]
+				var div1= document.querySelectorAll('.div_1')[0]
+				var st = document.body.scrollTop || document.documentElement.scrollTop
+				// div1.onmousedown = function(e){
+				// 	div1.onmousemove = function(e){
+				// 		var x = e.pageX-(100);
+				// 		var y = e.pageY-(50);
+				// 		
+				// 		// console.log(x,y)
+				// 		div1.style.left = x + "px"
+				// 		div1.style.top = y + st+ "px"
+				// 	}
+				// 	div1.onmouseup = function(){
+				// 		div1.onmousemove = null
+				// 	}
+				// }
+			// 	div1.onmousedown = function(e){
+			// 		e = e || window.e
+			// 		var xpy = e.clientX-div1.offsetLeft;
+			// 		var ypy = e.clientY-div1.offsetTop;
+			// 		// div1.style.left = xpy + "px"
+			// 		// div1.style.top = ypy + "px"
+			// 		// console.log(e)
+			// 		// return
+			// 		document.onmousemove = function(e){
+			// 			e = e || window.e
+			// 			var x = e.clientX - xpy;
+			// 			var y = e.clientY - ypy;
+			// 			
+			// 			// console.log(x,y)
+			// 			div1.style.left = x + "px"
+			// 			div1.style.top = y + "px"
+			// 		}
+			// 		document.onmouseup = function(){
+			// 			document.onmousemove = null
+			// 			document.onmouseup = null;
+			// 		}
+			// 	}
+			// 	return false;
+			// }
+			Yidong(div1);
+			function Yidong(obj){
+				obj.onmousedown = function(e){
+						e = e || window.e
+						var xpy = e.clientX-obj.offsetLeft;
+						var ypy = e.clientY-obj.offsetTop;
+						document.onmousemove = function(e){
+							e = e || window.e
+							var x = e.clientX - xpy;
+							var y = e.clientY - ypy;
+							
+							// console.log(x,y)
+							obj.style.left = x + "px"
+							obj.style.top = y + "px"
+						}
+						document.onmouseup = function(){
+							document.onmousemove = null
+							document.onmouseup = null;
+						}
+					}
+					return false;
+				}
+			}
+			
+			
+			
+		</script>
+		
+		
+		<style type="text/css">
+			.div_1{
+				width: 200px;
+				height: 150px;
+				background-color: #87CEEB;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body style="height: 1000px;">
+		<div class="div_1"></div>
+	</body>
+</html>

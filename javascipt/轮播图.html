@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.ul_1{
+				list-style: none;
+				width:3000px;
+				height: 300px;
+				display: flex;
+				border: 1px solid;
+				overflow: hidden;
+				transition: all 1s;;
+				/* position: relative; */
+			}
+			.ul_1>li{
+				width: 600px;
+				height: 300px;
+				border: 1px solid;
+				
+				/* position: absolute; */
+			}
+			div{
+				width: 600px;
+				height: 300px;
+				border:1px solid;
+				overflow: hidden;
+				margin: auto auto;
+				position: relative
+			}
+			div>div{
+				border: 0px solid ;
+				width: 200px;
+				height: 35px;
+				margin-top: -35px;
+				display: flex;
+			}
+			div>div>div{
+				margin-top: 2px;
+				border: 1px solid;
+				width: 30px;
+				height: 25px;
+				display: block;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var lis = document.querySelectorAll('li');
+				var div1 = document.querySelectorAll('div')[0]
+				var ul1= document.querySelectorAll('.ul_1')[0]
+				
+				
+				
+					var a = -600;
+					var index = -1;
+					
+				
+					
+			
+				// for(var i = 0; i<lis.length;i++){
+				// 	var index = i 
+				// 	console.log(lis[i])
+				// 	// clearInterval(time)
+					
+				// }
+				// // lis[4].style.transform = "translateX(-200px)"
+				var div2 = document.querySelectorAll('div')[1]
+						var divNode = div2.querySelectorAll('div');
+				var time = setInterval((obj) => {
+					// console.log(ul1)
+						a += 600;
+					ul1.style.transform = "translateX(-"+ a +"px)"
+					index ++;
+					if(index > 4){
+							index  = 0
+						}
+						// console.log(divNode[index])
+						divNode[index].style.backgroundColor = 'red'
+						// console.log(divNode[index].style.backgroundColor == 'red')
+						if(divNode[index].style.backgroundColor == 'red'){
+							if(divNode[index] == divNode[0]){
+								divNode[4].style.backgroundColor = null 
+								return;
+							}
+							divNode[index-1].style.backgroundColor = null 
+							// divNode[4].style.backgroundColor = null
+						}
+					if(a > (600 * lis.length) - 1200){
+						a = -600;
+					}
+					
+				
+				},2000)	
+
+
+				var swiper = function(){
+					var target = document.querySelectorAll(".target div");
+					var shuzi = 600;
+					for(let i=0;i<target.length;i++){
+						target[i].addEventListener("click",function(){
+							ul1.style.transform = "translateX(-"+(i * shuzi)+"px)";
+							for(var j=0;j<target.length;j++){
+								if(j==i){
+									target[j].style.backgroundColor = 'red';
+								}else{
+									target[j].style.backgroundColor = null;
+								}
+							}
+							clearInterval(time)
+							// divNode[i -1].style.backgroundColor = 'red';
+								
+								// console.log(shuzi%i)
+						
+							
+							// for(var j =0; j<divNode.length;j++){
+							// 	
+							// }
+							
+						})
+					}
+				}
+				swiper();
+			}
+	
+		</script>
+	</head>
+	<body>
+		<div>
+			<ul class="ul_1">
+
+
+				<li>11111</li>
+				<li>22222</li>
+				<li>3333333</li>
+				<li>44444444</li>
+				<li>555555</li>
+			</ul>
+			<div class="target">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			document.querySelector(".ul_1").addEventListener("mousedown",function(e){
+				document.querySelector(".ul_1").addEventListener("mousemove", move)
+				return false;
+			})
+			document.querySelector(".ul_1").addEventListener("mouseup",function(e){
+				document.querySelector(".ul_1").removeEventListener("mousemove", move)
+					return false;
+			})
+			function move(e){
+				console.log(e.clientX)
+				return false;
+			}
+
+		</script>
+	</body>
+</html>

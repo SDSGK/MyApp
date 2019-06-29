@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			window.onload = function(){
+				var btn = document.getElementsByTagName('button')[0];
+				btn.onclick = function(){
+					console.log(btn);
+					var ul  = document.getElementsByClassName('ul_1')[0];
+					var ulson = ul.children;
+					var btnson = btn.children
+					var ulss = ul.childNodes;
+					console.log(ulson.length)
+					for(var i =0; i<=ulss.length-1;i++){
+						
+						console.log(ulss[i])
+						}
+					for(var i =0; i<=ulson.length-1;i++){
+						// console.log(ulson[i])
+						
+					}
+					var ulfirst = ul.firstChild;
+					console.log(ulfirst)
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<ul class="ul_1">
+			<li>我是第1个li</li>111
+			<li>我是第2个li</li>
+			<li>我是第3个li</li>
+			<li>我是第4个li</li>
+			<li>我是第5个li</li>
+			<li>我是第6个li</li>
+			<li>我是第7个li</li>
+			<li>我是第8个li</li>
+		</ul>
+		<button type="button">123</button>
+	</body>
+</html>

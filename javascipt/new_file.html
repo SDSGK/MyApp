@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button>1</button>
+		<button>2</button>
+		<button>3</button>
+		<button>4</button>
+		<script type="text/javascript">
+			var btn = document.querySelectorAll("button");
+			for(var i=0;i<btn.length;i++){
+				btn[i].addEventListener("click",function(){
+					console.log(i)
+				},true)
+			}
+			// for(let i=0;i<btn.length;i++){
+			// 	btn[i].addEventListener("click",function(){
+			// 		console.log(i)
+			// 	})
+			// }
+		</script>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var div1=  document.querySelectorAll('.div_1')[0]
+				var div2=  document.querySelectorAll('.div_2')[0]
+				// console.log(div1,div2)
+				div1.onmousemove = function(e){
+					// console.log('x',e.clientX)	
+					// console.log('y',e.clientY)
+					// if(!e){
+					// 	e = window.e
+					// }
+					e = e || window.e;
+					var x = e.clientX
+					var y = e.clientY
+					div2.innerHTML ="x="+ x + "y="+ y
+				}
+			}
+		</script>
+		<style type="text/css">
+			.div_1{
+				width: 500px;
+				height: 320px;
+				border: 1px solid;
+			}
+			.div_2{
+				width: 300px;
+				height: 80px;
+				border: 1px solid;
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div_1"></div>
+		<div class="div_2"></div>
+	</body>
+</html>
